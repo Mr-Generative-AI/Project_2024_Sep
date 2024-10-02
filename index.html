@@ -51,11 +51,12 @@
                 <p>
                     We study single-view 3D portrait creation, specifically producing a full-head 3D portrait from a single headshot.
                     This problem faces two challenges:
-                    1) the 2D image personalization methods often produce suboptimal results due to either the lack of 3D awareness in 2D training images or the limited diversity of 3D training assets and 
+                    1) the 2D image-based personalization methods lack comprehensive 3D awareness due to the scarcity of multi-view 2D images or  3D assets in the training data, and 
                     2) the score distillation sampling optimization methods usually take hours to produce a single 3D asset, making the process quite time-consuming. 
-                    To overcome these limitations, we propose Instax3D, a generative Gaussian Splatting model with a video diffusion prior for rapid 3D portrait creation. Specifically, we convert the 3D portrait creation problem into a ``generation and construction'' process. 
-                    \ours{} initially synthesizes a multi-view video sequence using a fine-tuned video diffusion model, capitalizing on inherent diversity and multi-view knowledge from the massive video data. 
-                    Subsequently, Instax3D reconstructs the 3D portrait directly utilizing a multi-view FLAME-based Gaussian splatting representation from the generated video frames, structurally guided by an expressive 3D parametric model. 
+                    To overcome these limitations, we propose Instax3D, a generative Gaussian Splatting model with a video diffusion prior for rapid 3D portrait creation.
+                    We formulate the 3D portrait creation problem as a ``generation and construction'' process. 
+                    Specifically, Instax3D first synthesizes a consecutive video sequence using a finetuned video diffusion model, capitalizing on inherent diversity and multi-view knowledge from the massive video data. 
+                    Subsequently, Instax3D reconstructs the 3D portrait with a multi-view FLAME-based Gaussian splatting representation from the generated video frames, structurally guided by an expressive 3D parametric model. 
                     Notably, given a reference headshot image, Instax3D can generate a 3D portrait in just 10 minutes and render it at 40 FPS. 
                     This represents a 10x improvement over previous mainstream optimization-based methods, which can take between one to two hours. 
                 </p>
